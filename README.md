@@ -5,16 +5,16 @@ The code for CS427 Android app.
 
 <b>Team # member information</b>
 <br/>
-| Name          | NetID         | GitHub ID   | Role          | Experience    |
-| ------------- | ------------- | ------------| ------------- | ------------- |
-|               |               |             |               |               |            
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
+| Name                      | NetID         | GitHub ID   | Role          | Experience                      |
+| --------------------------| ------------- | ------------| ------------- | ------------------------------- |
+|  Chinmay Nandkishor Saraf | csaraf2       | ChinuSaraf  | Team Leader   | Wed Development, App Development|            
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
+|                           |               |             |               |                                 |
 <br/>
 
 
