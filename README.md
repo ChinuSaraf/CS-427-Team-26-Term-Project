@@ -30,7 +30,7 @@ Meeting Location (Zoom Link): [Link](https://illinois.zoom.us/j/81996515998?pwd=
 </br>
 Members present: List the NetID of the people who attended the meeting
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1Breg94bS14hrQbvCD-1YxVA8sOVfN1KLIoW5WZtpWc8/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
