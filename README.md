@@ -7,7 +7,7 @@ The code for CS427 Android app.
 <br/>
 | Name                      | NetID         | GitHub ID    | Role          | Experience                      |
 | --------------------------| ------------- | ------------ | ------------- | ------------------------------- |
-|  Chinmay Nandkishor Saraf | csaraf2       | ChinuSaraf   | Tech Lead     | Web Development, App Development|            
+|  Chinmay Nandkishor Saraf | csaraf2       | ChinuSaraf   | Tech Lead     | Java, Javascript, ReactJs, Python, SQL      |            
 |    Hyo Sup Kim            | hyosup2       | Henesys      | Manager       | Python, R, SQL                  |
 |    Preeti Agrawal         | preetia3      | preetia3     | Developer     | Java, SQL, Python               |
 |    Qiyang Chen            | qiyangc2      | woshicqy     | Developer     | Java, C++, Python               |
