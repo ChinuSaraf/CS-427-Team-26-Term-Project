@@ -36,12 +36,12 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 | ---------------| --------------------------------| ----------------------|
 |  hyosup2       |  Started Term Project           | Slack Setup, Communication Set Up, Repository Set Up |
 |  csaraf2       |  Started Term Project           | Communication Set Up, Repository Set Up |
-|  preetia3      |  Started Term Project           | Standby for Week 2    |
-|  qiyangc2      |  Started Term Project           | Standby for Week 2    |
-|  sk120         |  Started Term Project           | Standby for Week 2    |
-|  ug4           |  Started Term Project           | Standby for Week 2    |
-|  ys58          |  Started Term Project           | Standby for Week 2    |
-|  zeweil2       |  Started Term Project           | Standby for Week 2    |
+|  preetia3      |  Started Term Project           | Standby for Milestone 2 |
+|  qiyangc2      |  Started Term Project           | Standby for Milestone 2 |
+|  sk120         |  Started Term Project           | Standby for Milestone 2 |
+|  ug4           |  Started Term Project           | Standby for Milestone 2 |
+|  ys58          |  Started Term Project           | Standby for Milestone 2 |
+|  zeweil2       |  Started Term Project           | Standby for Milestone 2 |
 </br>
 
 
