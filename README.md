@@ -28,7 +28,7 @@ Meeting Location (Zoom Link): [Link](https://illinois.zoom.us/j/81996515998?pwd=
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58, zeweil2 
 </br>
 Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1Breg94bS14hrQbvCD-1YxVA8sOVfN1KLIoW5WZtpWc8/edit?usp=sharing)
 </br>
