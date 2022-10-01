@@ -11,7 +11,7 @@ The code for CS427 Android app.
 |    Hyo Sup Kim            | hyosup2       | Henesys      | Manager       | Python, R, SQL                  |
 |    Preeti Agrawal         | preetia3      | preetia3     | Developer     | Java, SQL, Python               |
 |    Qiyang Chen            | qiyangc2      | woshicqy     | Developer     | Java, C++, Python               |
-|    Saiharshith Ramesh     | sk120         | harshith2000 | Developer     |                                 |
+|    Saiharshith Ramesh     | sk120         | harshith2000 | Developer     | C++, Java, Python, SQL          |
 |    Utkarsh Goyal          | ug4           | goyalutkarsh | Developer     | C++, Python                     |
 |    Yeshwanth Sripathy     | ys58          | yesh385      | Developer     | C++, Java, Python, SQL          |
 |    Zewei Long             | zeweil2       | zewei-uiuc   | Developer     | Java, Python, Javascript        |
