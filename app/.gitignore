@@ -1,6 +1,7 @@
 build/
 gradle/
 .gradle/
+/.idea/
 proguard-rules.pro
 build.gradle
 gradle-wrapper.properties
