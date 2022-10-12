@@ -53,7 +53,7 @@ Meeting Notes: [Meeting Notes](https://docs.google.com/document/d/1gqT75CHmCkNsJ
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
+|  hyosup2       | Slack Setup, Communication Set Up, Repository Set Up, Google Drive Set Up, Milestone 1 Submission | Meeting Notes, Schedule Meeting Time, Slack Communication, PDF Deliverables #1 + #2, Peer Evaluation Form                      |
 |                |                                 |                       |
 |                |                                 |                       |
 |                |                                 |                       |
