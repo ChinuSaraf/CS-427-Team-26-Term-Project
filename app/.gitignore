@@ -1,1 +1,10 @@
-/build
+build/
+gradle/
+.gradle/
+proguard-rules.pro
+build.gradle
+gradle-wrapper.properties
+gradle.properties
+gradlew
+gradlew.bat
+local.properties
