@@ -1,5 +1,5 @@
 # Term-Project
-The code for CS427 Android app. 
+The code for CS427 Android App. 
 <br/>
 <br/>
 
