@@ -85,13 +85,13 @@ Meeting notes: [Meeting Notes](https://docs.google.com/document/d/18rJv3iLhk4K-0
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: hyosup2, csaraf2, preetia3, sk120, ug4, ys58, zeweil2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1Mei9OACKyPbu_ECrl1QB77g8M1UZoVapJa_JDYiWY-U/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       |                                 |                       |
+|  hyosup2       | Uploaded Meeting Notes, Scheduled Git Meeting, Assigned Teams, Milestone 3 Timeline Established |                       |
 |  csaraf2       |                                 |                       |
 |  preetia3      |                                 |                       |
 |  qiyangc2      |                                 |                       |
