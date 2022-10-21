@@ -58,7 +58,7 @@ Meeting Notes: [Meeting Notes](https://docs.google.com/document/d/1gqT75CHmCkNsJ
 |  preetia3      | Standby for Milestone 2         | Update fully dressed use cases and review other requirements for Milestone 2. |
 |  qiyangc2      | Standby for Milestone 2         | Due to some time conflicts, absent for group meeting. So, I watched the meeting notes and meeting recording to know group discussion. Work on draft for UML class diagram. |
 |  sk120         | Standby for Milestone 2         | Saw the meeting notes and the recording to know about the group discussion, complete the Component Transition Graph. |
-|  ug4           | Standby for Milestone 2         |                       |
+|  ug4           | Standby for Milestone 2         | Attend the meeting and work on a draft for fully dressed cases. Specifically work on clean informal requirements document by compiling the feedback received in the group discussion. |
 |  ys58          | Standby for Milestone 2         | Draft a clean informal requirements document by compiling the feedback received in the group discussion. |
 |  zeweil2       | Standby for Milestone 2         | Finish UML class diagram and check other requirements. |
 </br>
@@ -77,7 +77,7 @@ Meeting notes: [Meeting Notes](https://docs.google.com/document/d/18rJv3iLhk4K-0
 |  preetia3      | Updated fully dressed use cases and reviewed other requirements for Milestone 2. Completed peer review for Milestone 2. | Standby for Milestone 3   |
 |  qiyangc2      | Completed the UML class diagram and got it reviewed by the team. | Standby for Milestone 3   |
 |  sk120         | Completed the Component Transition Graph and got it reviewed by the team. | Standby for Milestone 3   |
-|  ug4           |                                 | Standby for Milestone 3   |
+|  ug4           | Completed creating the informal requirements document and got it reviewed by the team. | Standby for Milestone 3   |
 |  ys58          | Completed creating the informal requirements document and got it reviewed by the team. | Standby for Milestone 3   |
 |  zeweil2       | Discussed and checked the UML class diagram with Qiyang; reviewed the fully dressed use cases and found typos. | Standby for Milestone 3   |
 </br>
