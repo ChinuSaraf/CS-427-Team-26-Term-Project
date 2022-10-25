@@ -1,65 +1,112 @@
 package edu.uiuc.cs427app;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.navigation.ui.AppBarConfiguration;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import edu.uiuc.cs427app.databinding.ActivityMainBinding;
+import java.util.ArrayList;
 
-import android.widget.Button;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Initializing the UI components
-        // The list of locations should be customized per user (change the implementation so that
-        // buttons are added to layout programmatically
-        Button buttonChampaign = findViewById(R.id.buttonChampaign);
-        Button buttonChicago = findViewById(R.id.buttonChicago);
-        Button buttonLA = findViewById(R.id.buttonLA);
-        Button buttonNew = findViewById(R.id.buttonAddLocation);
-
-        buttonChampaign.setOnClickListener(this);
-        buttonChicago.setOnClickListener(this);
-        buttonLA.setOnClickListener(this);
-        buttonNew.setOnClickListener(this);
-
     }
 
     @Override
-    public void onClick(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            case R.id.buttonChampaign:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Champaign");
-                startActivity(intent);
-                break;
-            case R.id.buttonChicago:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Chicago");
-                startActivity(intent);
-                break;
-            case R.id.buttonLA:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Los Angeles");
-                startActivity(intent);
-                break;
-            case R.id.buttonAddLocation:
-                // Implement this action to add a new location to the list of locations
-                break;
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }
+
+    public void onClickAddDetails(View view) {
+
+        String name = ((EditText) findViewById(R.id.textName)).getText().toString();
+        int flag=0;
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
+        if(cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                String currentName = cursor.getString(Math.max(cursor.getColumnIndex("name"), 0));
+                System.out.println((currentName));
+                System.out.println(name);
+                if(currentName.equals(name))
+                {
+                    flag=1;
+                    break;
+                }
+                cursor.moveToNext();
+            }
+        }
+        // class to add values in the database
+        if(flag==0)
+        {
+            ContentValues values = new ContentValues();
+
+            // fetching text from user
+            values.put(CityContentProvider.name, name);
+
+            // inserting into database through content URI
+            getContentResolver().insert(CityContentProvider.CONTENT_URI, values);
+
+            // displaying a toast message
+            Toast.makeText(getBaseContext(), name+" Inserted", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(getBaseContext(), "City already added", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onClickDeleteDetails(View view)
+    {
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
+        String name=((EditText) findViewById(R.id.textName)).getText().toString();
+        int count = getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), "name=?", new String[]{name});
+        if(count == 0)
+        {
+            Toast.makeText(getBaseContext(), "City not found!", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(getBaseContext(), name+" deleted", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onClickShowDetails(View view) {
+        // inserting complete table details in this text field
+        TextView resultView= (TextView) findViewById(R.id.res);
+
+        // creating a cursor object of the
+        // content URI
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
+
+        // iteration of the cursor
+        // to print whole table
+        if(cursor.moveToFirst()) {
+            StringBuilder strBuild=new StringBuilder();
+            while (!cursor.isAfterLast()) {
+                strBuild.append("\n"+cursor.getString(Math.max(cursor.getColumnIndex("id"), 0))+ "-"+ cursor.getString(Math.max(cursor.getColumnIndex("name"), 0)));
+                cursor.moveToNext();
+            }
+            resultView.setText(strBuild);
+        }
+        else {
+            resultView.setText("No Records Found");
         }
     }
 }
