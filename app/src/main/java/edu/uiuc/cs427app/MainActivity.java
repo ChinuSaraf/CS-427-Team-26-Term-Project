@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +24,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // welcome information
+        String username = getIntent().getStringExtra("username").toString();
+        String welcome = "Welcome, " + username + '!';
+
+        TextView welcomeMessage = findViewById(R.id.welcomeText);
+        welcomeMessage.setText(welcome);
+
         // Initializing the UI components
         // The list of locations should be customized per user (change the implementation so that
         // buttons are added to layout programmatically
@@ -30,11 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button buttonChicago = findViewById(R.id.buttonChicago);
         Button buttonLA = findViewById(R.id.buttonLA);
         Button buttonNew = findViewById(R.id.buttonAddLocation);
+        Button buttonSignOut = findViewById(R.id.buttonSignOut);
 
         buttonChampaign.setOnClickListener(this);
         buttonChicago.setOnClickListener(this);
         buttonLA.setOnClickListener(this);
         buttonNew.setOnClickListener(this);
+        buttonSignOut.setOnClickListener(this);
 
     }
 
@@ -55,6 +65,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonLA:
                 intent = new Intent(this, DetailsActivity.class);
                 intent.putExtra("city", "Los Angeles");
+                startActivity(intent);
+                break;
+            // sign out butten
+            case R.id.buttonSignOut:
+                intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.buttonAddLocation:

@@ -25,6 +25,17 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="CS427 Project App" />
+        
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
+        <Button
+            android:id="@+id/buttonSignOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign out" />
 
         <TextView
             android:id="@+id/textView4"
