@@ -64,12 +64,13 @@ public class MainActivity extends AppCompatActivity {
             getContentResolver().insert(CityContentProvider.CONTENT_URI, values);
 
             // displaying a toast message
-            Toast.makeText(getBaseContext(), name+" Inserted", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), name+" inserted!", Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(getBaseContext(), "City already added", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), name+" already added!", Toast.LENGTH_LONG).show();
         }
+        onClickShowDetails(view);
     }
 
     public void onClickDeleteDetails(View view)
@@ -83,8 +84,9 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getBaseContext(), name+" deleted", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), name+" deleted!", Toast.LENGTH_LONG).show();
         }
+        onClickShowDetails(view);
     }
 
     public void onClickShowDetails(View view) {
