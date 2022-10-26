@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
     public void onClickAddDetails(View view) {
 
         String name = ((EditText) findViewById(R.id.textName)).getText().toString();
+        System.out.println(name);
+        if(name.length()==0){
+            Toast.makeText(getBaseContext(), "Please enter city name!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Integer userId = 1;
+        System.out.println(userId);
         int flag=0;
         Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
         if(cursor.moveToFirst()) {
@@ -57,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             // fetching text from user
             values.put(CityContentProvider.name, name);
+            values.put(CityContentProvider.userId, "1");
 
             // inserting into database through content URI
             getContentResolver().insert(CityContentProvider.CONTENT_URI, values);
@@ -75,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
     {
         Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
         String name=((EditText) findViewById(R.id.textName)).getText().toString();
-        int count = getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), "name=?", new String[]{name});
+        int count = getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), "userId=? AND name=?", new String[]{"1",name});
         if(count == 0)
         {
-            Toast.makeText(getBaseContext(), "City not found!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Cannot delete" + name+" is not found in your list!", Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -100,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         if(cursor.moveToFirst()) {
             StringBuilder strBuild=new StringBuilder();
             while (!cursor.isAfterLast()) {
-                strBuild.append("\n"+cursor.getString(Math.max(cursor.getColumnIndex("id"), 0))+ "-"+ cursor.getString(Math.max(cursor.getColumnIndex("name"), 0)));
+                strBuild.append("\n"+cursor.getString(Math.max(cursor.getColumnIndex("id"), 0))+ "-" + (Math.max(cursor.getColumnIndex("userId"), 0))+ "-" + cursor.getString(Math.max(cursor.getColumnIndex("name"), 0)));
                 cursor.moveToNext();
             }
             resultView.setText(strBuild);

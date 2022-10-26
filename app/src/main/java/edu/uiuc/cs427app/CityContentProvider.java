@@ -26,6 +26,7 @@ public class CityContentProvider extends ContentProvider {
     static final Uri CONTENT_URI = Uri.parse(URL);
 
     static final String id = "id";
+    static final String userId = "userId";
     static final String name = "name";
     static final int uriCode = 1;
     static final UriMatcher uriMatcher;
@@ -137,11 +138,12 @@ public class CityContentProvider extends ContentProvider {
     static final String TABLE_NAME = "Cities";
 
     // declaring version of the database
-    static final int DATABASE_VERSION = 1;
+    static final int DATABASE_VERSION = 2;
 
     // sql query to create the table
     static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME
             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + " userId TEXT NOT NULL, "
             + " name TEXT NOT NULL);";
 
     // creating a database

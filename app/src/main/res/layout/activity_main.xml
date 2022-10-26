@@ -76,7 +76,7 @@
             android:background="#4CAF50"
             android:fontFamily="sans-serif"
             android:onClick="onClickDeleteDetails"
-            android:text="Delete Data"
+            android:text="@string/deleteButtonText"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#FFFFFF"

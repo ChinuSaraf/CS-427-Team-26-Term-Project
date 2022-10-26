@@ -2,6 +2,8 @@
     <string name="app_name">Content_Provider_In_Android</string>
     <string name="hintText">Enter City Name</string>
     <string name="heading">Content Provider In Android</string>
-    <string name="insertButtontext">Insert Data</string>
-    <string name="loadButtonText">Load Data</string>
+    <string name="insertButtontext">Add City</string>
+    <string name="loadButtonText">Load Cities</string>
+    <string name="deleteButtonText">Delete City</string>
+
 </resources>
