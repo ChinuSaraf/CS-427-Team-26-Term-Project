@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         int count = getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), "userId=? AND name=?", new String[]{"1",name});
         if(count == 0)
         {
-            Toast.makeText(getBaseContext(), "Cannot delete" + name+" is not found in your list!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Cannot delete. " + name+" is not found in your list!", Toast.LENGTH_LONG).show();
         }
         else
         {
