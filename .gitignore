@@ -1,0 +1,9 @@
+# Ignore the .gradle folder
+.gradle/
+
+# Ignore the .idea folder
+.idea/
+
+
+# Ignore the local.properties
+local.properties

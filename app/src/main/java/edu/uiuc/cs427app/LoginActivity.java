@@ -1,5 +1,6 @@
 package edu.uiuc.cs427app;
 
+import android.accounts.AccountManagerCallback;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,6 +16,14 @@ import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 import android.widget.Button;
 
 import android.widget.EditText;
+import java.util.Hashtable;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +31,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ActivityMainBinding binding;
     private EditText username;
     private EditText password;
+    private Hashtable<String, String> accountDictionary;
+
+    public class AllUserAccounts{
+        AllUserAccounts(){
+            Hashtable<String, String[]> accountDictionary;
+
+            accountDictionary = new Hashtable<String, String[]>();
+            String test = "test";
+        }
+
+        public Hashtable<String, String> getAccountDict(){
+            return accountDictionary;
+        }
+
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         buttonLogin.setOnClickListener(this);
         buttonSignUp.setOnClickListener(this);
+        AllUserAccounts userAccounts = new AllUserAccounts();
+
     }
 
     @Override
@@ -48,6 +77,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Log.e("LISTEN", "username:" + username_str);
         String password_str = password.getText().toString();
         Log.e("LISTEN", "password:" + password_str);
+        String Username = username_str;
+        String Password = password_str;
+        AllUserAccounts userAccounts = new AllUserAccounts();
+        Hashtable<String, String> accountDict = userAccounts.getAccountDict();
+
+//        String test = userAccounts.test();
+
 
         switch (view.getId()) {
             case R.id.buttonSignUp:
@@ -56,26 +92,39 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 // TODO
 
                 // lead to the main page
-                intent = new Intent(this, MainActivity.class);
 
-                // send the details of username to personalize the main page
-                intent.putExtra("username", username_str);
+                if (!accountDict.containsKey(accountDict)){
+                    accountDict.put(Username,Password);
+                    intent = new Intent(this, MainActivity.class);
+                    // send the details of username to personalize the main page
+                    intent.putExtra("username", username_str);
 
-                startActivity(intent);
+                    startActivity(intent);
+                }
+
+
                 break;
 
              case R.id.buttonLogin:
 
                  // check the correctness of username and password
                  // TODO
+                 if (accountDict.containsKey(accountDict)){
+                     accountDict.put(Username,Password);
+                     intent = new Intent(this, MainActivity.class);
+                     // send the details of username to personalize the main page
+                     intent.putExtra("username", username_str);
 
+                     startActivity(intent);
+                 }
                  // lead to the main page
-                 intent = new Intent(this, MainActivity.class);
-                
-                 // send the details of username to personalize the main page
-                 intent.putExtra("username", username_str);
+//                 intent = new Intent(this, MainActivity.class);
+//
+//                 // send the details of username to personalize the main page
+//                 intent.putExtra("username", username_str);
+//
+//                 startActivity(intent);
 
-                startActivity(intent);
                  break;
         }
     }
