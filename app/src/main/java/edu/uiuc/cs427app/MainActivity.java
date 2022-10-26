@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         if(cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 String currentName = cursor.getString(Math.max(cursor.getColumnIndex("name"), 0));
-                System.out.println((currentName));
-                System.out.println(name);
                 if(currentName.equals(name))
                 {
                     flag=1;
