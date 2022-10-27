@@ -138,7 +138,7 @@ public class CityContentProvider extends ContentProvider {
     static final String TABLE_NAME = "Cities";
 
     // declaring version of the database
-    static final int DATABASE_VERSION = 2;
+    static final int DATABASE_VERSION = 1;
 
     // sql query to create the table
     static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME

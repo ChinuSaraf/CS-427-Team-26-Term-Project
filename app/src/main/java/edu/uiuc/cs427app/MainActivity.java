@@ -42,8 +42,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //function to add a city name -- gets called when add city button is called
     public void onClickAddDetails(View view) {
         String name = ((EditText) findViewById(R.id.textName)).getText().toString();
+        if(name.length() == 0){
+            Toast.makeText(getBaseContext(), "Please enter a city name!", Toast.LENGTH_LONG).show();
+            return;
+        }
         if(nonNull(citiesFromDB) && citiesFromDB.contains(name)){
             Toast.makeText(getBaseContext(), name+" already added!", Toast.LENGTH_LONG).show();
         }
@@ -57,9 +62,11 @@ public class MainActivity extends AppCompatActivity {
             // displaying a toast message
             Toast.makeText(getBaseContext(), name+" inserted!", Toast.LENGTH_LONG).show();
         }
+        //calling the showcities list function to show the list every time the user adds a city so that it looks dynamic
         showCities();
     }
-
+    
+    //this function shows the list of cities that the user has added till now.
     public void showCities() {
         listView = (ListView) findViewById(R.id.listCity);
         Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"),  null, CityContentProvider.userName+"=?", new String[]{"user1"}, null);

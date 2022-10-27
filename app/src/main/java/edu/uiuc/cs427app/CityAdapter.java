@@ -48,6 +48,7 @@ public class CityAdapter extends BaseAdapter {
         // Click listener of button
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
+            //this function is called when the user click the delete city button
             public void onClick(View view) {
                 int count = context.getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), CityContentProvider.cityName+"=? and " + CityContentProvider.userName+"=?", new String[]{cityName, "user1"});
                 if(count != 0) {
