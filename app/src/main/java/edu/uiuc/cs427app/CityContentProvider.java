@@ -26,8 +26,8 @@ public class CityContentProvider extends ContentProvider {
     static final Uri CONTENT_URI = Uri.parse(URL);
 
     static final String id = "id";
-    static final String userId = "userId";
-    static final String name = "name";
+    static final String userName = "userName";
+    static final String cityName = "cityName";
     static final int uriCode = 1;
     static final UriMatcher uriMatcher;
     private static HashMap<String, String> values;
@@ -143,8 +143,8 @@ public class CityContentProvider extends ContentProvider {
     // sql query to create the table
     static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME
             + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + " userId TEXT NOT NULL, "
-            + " name TEXT NOT NULL);";
+            + " userName TEXT NOT NULL, "
+            + " cityName TEXT NOT NULL);";
 
     // creating a database
     private static class DatabaseHelper extends SQLiteOpenHelper {

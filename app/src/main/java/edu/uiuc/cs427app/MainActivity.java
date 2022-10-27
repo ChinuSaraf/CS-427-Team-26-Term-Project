@@ -1,8 +1,10 @@
 package edu.uiuc.cs427app;
 
+import static java.util.Objects.nonNull;
+
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,18 +16,23 @@ import android.view.View;
 
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ListView listView;
+    private ArrayList<String> citiesFromDB = new ArrayList<String>();
+    private CityAdapter cityAdapter;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        showCities();
     }
 
     @Override
@@ -36,87 +43,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickAddDetails(View view) {
-
         String name = ((EditText) findViewById(R.id.textName)).getText().toString();
-        System.out.println(name);
-        if(name.length()==0){
-            Toast.makeText(getBaseContext(), "Please enter city name!", Toast.LENGTH_LONG).show();
-            return;
+        if(nonNull(citiesFromDB) && citiesFromDB.contains(name)){
+            Toast.makeText(getBaseContext(), name+" already added!", Toast.LENGTH_LONG).show();
         }
-        Integer userId = 1;
-        System.out.println(userId);
-        int flag=0;
-        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
-        if(cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                String currentName = cursor.getString(Math.max(cursor.getColumnIndex("name"), 0));
-                if(currentName.equals(name))
-                {
-                    flag=1;
-                    break;
-                }
-                cursor.moveToNext();
-            }
-        }
-        // class to add values in the database
-        if(flag==0)
-        {
+        else {
             ContentValues values = new ContentValues();
-
             // fetching text from user
-            values.put(CityContentProvider.name, name);
-            values.put(CityContentProvider.userId, "1");
-
+            values.put(CityContentProvider.cityName, name);
+            values.put(CityContentProvider.userName, "user1");
             // inserting into database through content URI
             getContentResolver().insert(CityContentProvider.CONTENT_URI, values);
-
             // displaying a toast message
             Toast.makeText(getBaseContext(), name+" inserted!", Toast.LENGTH_LONG).show();
         }
-        else
-        {
-            Toast.makeText(getBaseContext(), name+" already added!", Toast.LENGTH_LONG).show();
-        }
-        onClickShowDetails(view);
+        showCities();
     }
 
-    public void onClickDeleteDetails(View view)
-    {
-        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
-        String name=((EditText) findViewById(R.id.textName)).getText().toString();
-        int count = getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), "userId=? AND name=?", new String[]{"1",name});
-        if(count == 0)
-        {
-            Toast.makeText(getBaseContext(), "Cannot delete. " + name+" is not found in your list!", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            Toast.makeText(getBaseContext(), name+" deleted!", Toast.LENGTH_LONG).show();
-        }
-        onClickShowDetails(view);
-    }
-
-    public void onClickShowDetails(View view) {
-        // inserting complete table details in this text field
-        TextView resultView= (TextView) findViewById(R.id.res);
-
-        // creating a cursor object of the
-        // content URI
-        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"), null, null, null, null);
-
-        // iteration of the cursor
-        // to print whole table
+    public void showCities() {
+        listView = (ListView) findViewById(R.id.listCity);
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"),  null, CityContentProvider.userName+"=?", new String[]{"user1"}, null);
+        citiesFromDB = new ArrayList<String>();
         if(cursor.moveToFirst()) {
-            StringBuilder strBuild=new StringBuilder();
             while (!cursor.isAfterLast()) {
-                strBuild.append("\n"+cursor.getString(Math.max(cursor.getColumnIndex("id"), 0))+ "-" + (Math.max(cursor.getColumnIndex("userId"), 0))+ "-" + cursor.getString(Math.max(cursor.getColumnIndex("name"), 0)));
+                citiesFromDB.add(cursor.getString(Math.max(cursor.getColumnIndex(CityContentProvider.cityName), 0)));
                 cursor.moveToNext();
             }
-            resultView.setText(strBuild);
         }
-        else {
-            resultView.setText("No Records Found");
-        }
+        cityAdapter = new CityAdapter(MainActivity.this, citiesFromDB);
+        listView.setAdapter(cityAdapter);
+        cityAdapter.notifyDataSetChanged();
     }
 }
 
