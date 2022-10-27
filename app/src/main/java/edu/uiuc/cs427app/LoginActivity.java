@@ -8,13 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 
 import androidx.navigation.ui.AppBarConfiguration;
 
 import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
-
+import android.content.SharedPreferences;
+import android.widget.RelativeLayout;
+import android.content.SharedPreferences.Editor;
 import android.widget.EditText;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -23,7 +26,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
-
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,21 +46,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText username;
     private EditText password;
     private Hashtable<String, String> accountDictionary;
-
-    public class AllUserAccounts{
-        AllUserAccounts(){
-            Hashtable<String, String[]> accountDictionary;
-
-            accountDictionary = new Hashtable<String, String[]>();
-            String test = "test";
-        }
-
-        public Hashtable<String, String> getAccountDict(){
-            return accountDictionary;
-        }
-
-    }
-
+    private  SharedPreferences preferences;
+    private EditText etUserName;
+    private EditText etPassWord;
 
 
 
@@ -55,15 +57,46 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
+        etUserName = findViewById(R.id.username);
+        etPassWord = findViewById(R.id.password);
 
         Button buttonLogin = findViewById(R.id.buttonLogin);
         Button buttonSignUp = findViewById(R.id.buttonSignUp);
 
         buttonLogin.setOnClickListener(this);
         buttonSignUp.setOnClickListener(this);
-        AllUserAccounts userAccounts = new AllUserAccounts();
+
+        //Get the preference setting object: the first parameter is the table name, the second parameter is the permission
+        preferences=this.getSharedPreferences("SignUP",MODE_PRIVATE);
+        //Get the user name and password data stored in the preferences
+        String usrName = preferences.getString("name", "");
+        String usrPass = preferences.getString("pass", "");
+
+        //Put the data we stored in the two input boxes
+        etUserName.setText(usrName);
+        etPassWord.setText(usrPass);
+
+        //Set the click event of the signup button: save the entered data into the preferences
+        buttonSignUp.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //Save the data to the preferences
+                //1. Get an edited object of preferences
+                Editor ed=preferences.edit();
+                //2. Editor.putString; put string
+                //2.1. Get the content of the input box
+                String username = etUserName.getText().toString().trim();
+                String password = etPassWord.getText().toString().trim();
+                //2.2. Put our data
+                ed.putString("name",username);
+                ed.putString("pass",password);
+                //3. Submit
+                ed.commit();
+                Toast.makeText(getApplicationContext(),"Save successfully",Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
     }
 
@@ -79,11 +112,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Log.e("LISTEN", "password:" + password_str);
         String Username = username_str;
         String Password = password_str;
-        AllUserAccounts userAccounts = new AllUserAccounts();
-        Hashtable<String, String> accountDict = userAccounts.getAccountDict();
-
-//        String test = userAccounts.test();
-
 
         switch (view.getId()) {
             case R.id.buttonSignUp:
@@ -93,14 +121,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 // lead to the main page
 
-                if (!accountDict.containsKey(accountDict)){
-                    accountDict.put(Username,Password);
-                    intent = new Intent(this, MainActivity.class);
-                    // send the details of username to personalize the main page
-                    intent.putExtra("username", username_str);
+                intent = new Intent(this, MainActivity.class);
+                // send the details of username to personalize the main page
+                intent.putExtra("username", username_str);
 
-                    startActivity(intent);
-                }
+                startActivity(intent);
 
 
                 break;
@@ -109,24 +134,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                  // check the correctness of username and password
                  // TODO
-                 if (accountDict.containsKey(accountDict)){
-                     accountDict.put(Username,Password);
-                     intent = new Intent(this, MainActivity.class);
-                     // send the details of username to personalize the main page
-                     intent.putExtra("username", username_str);
+                 intent = new Intent(this, MainActivity.class);
 
-                     startActivity(intent);
-                 }
-                 // lead to the main page
-//                 intent = new Intent(this, MainActivity.class);
-//
-//                 // send the details of username to personalize the main page
-//                 intent.putExtra("username", username_str);
-//
-//                 startActivity(intent);
+                 // send the details of username to personalize the main page
+                 intent.putExtra("username", username_str);
+
+                 startActivity(intent);
 
                  break;
         }
     }
+
+
 }
 
