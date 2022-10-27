@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:paddingBottom="7.5dp"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
@@ -12,6 +12,9 @@
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="2dp"
         android:text="CityName"
         android:textColor="@android:color/black"
@@ -21,7 +24,11 @@
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_marginStart="140dp"
+        android:layout_marginEnd="4dp"
+        android:layout_alignParentRight="true"
 
         android:text="Delete" />
-</LinearLayout>
+
+
+</RelativeLayout>
