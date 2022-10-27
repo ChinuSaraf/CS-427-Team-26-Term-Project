@@ -1,5 +1,5 @@
 # Term-Project
-The code for CS427 Android app. 
+The code for CS427 Android App.
 <br/>
 <br/>
 
@@ -7,7 +7,7 @@ The code for CS427 Android app.
 <br/>
 | Name                      | NetID         | GitHub ID    | Role          | Experience                      |
 | --------------------------| ------------- | ------------ | ------------- | ------------------------------- |
-|  Chinmay Nandkishor Saraf | csaraf2       | ChinuSaraf   | Tech Lead     | Java, Javascript, ReactJs, Python, SQL      |            
+|  Chinmay Nandkishor Saraf | csaraf2       | ChinuSaraf   | Tech Lead     | Java, Javascript, ReactJs, Python, SQL      |
 |    Hyo Sup Kim            | hyosup2       | Henesys      | Manager       | Python, R, SQL                  |
 |    Preeti Agrawal         | preetia3      | preetia3     | Developer     | Java, SQL, Python               |
 |    Qiyang Chen            | qiyangc2      | woshicqy     | Developer     | Java, C++, Python               |
@@ -19,16 +19,16 @@ The code for CS427 Android app.
 
 
 <b>Weekly Progress Reports</b>
-</br> 
+</br>
 </br>
 Meeting Time: <b>Wednesdays @ 4pm Central Time</b>
-</br> 
+</br>
 Meeting Location (Zoom Link): [Link](https://illinois.zoom.us/j/81996515998?pwd=RmtJK0svaXp4allsMyszdkNtZW9BZz09)
-</br> 
+</br>
 </br>
 <b>Week 1</b>
 </br>
-Members Present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58, zeweil2 
+Members Present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58, zeweil2
 </br>
 Meeting Notes: [Meeting Notes](https://docs.google.com/document/d/1Breg94bS14hrQbvCD-1YxVA8sOVfN1KLIoW5WZtpWc8/edit?usp=sharing)
 </br>
@@ -47,58 +47,58 @@ Meeting Notes: [Meeting Notes](https://docs.google.com/document/d/1Breg94bS14hrQ
 
 <b>Week 2</b>
 </br>
-Members Present: hyosup2, csaraf2, preetia3, ug4, ys58, zeweil2 
+Members Present: hyosup2, csaraf2, preetia3, ug4, ys58, zeweil2
 </br>
 Meeting Notes: [Meeting Notes](https://docs.google.com/document/d/1gqT75CHmCkNsJRpV29B1AC3Cw4htU6jlPsjbKCkOzUc/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       | Repository Set Up, Establish Project Requirements & Scope | Upload Meeting Notes, Schedule Weekly Meeting @ When2Meet, Contact Absent Members, Distribute Work, Work on Use Cases + Class Diagram |
+|  csaraf2       | Repository Set Up, Establish Project Requirements & Scope | Add Repository Restrictions to Main Branch, Contribute to Transition Flow Diagram |
+|  preetia3      | Standby for Milestone 2         | Update fully dressed use cases and review other requirements for Milestone 2. |
+|  qiyangc2      | Standby for Milestone 2         | Due to some time conflicts, absent for group meeting. So, I watched the meeting notes and meeting recording to know group discussion. Work on draft for UML class diagram. |
+|  sk120         | Standby for Milestone 2         | Saw the meeting notes and the recording to know about the group discussion, complete the Component Transition Graph. |
+|  ug4           | Standby for Milestone 2         | Attend the meeting and work on a draft for fully dressed cases. Specifically work on clean informal requirements document by compiling the feedback received in the group discussion. |
+|  ys58          | Standby for Milestone 2         | Draft a clean informal requirements document by compiling the feedback received in the group discussion. |
+|  zeweil2       | Standby for Milestone 2         | Finish UML class diagram and check other requirements. |
 </br>
 
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, zeweil2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: [Meeting Notes](https://docs.google.com/document/d/18rJv3iLhk4K-0vyPCZjiDcrlKhAs89DuhLK_pa9BX5I/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       | Uploaded Meeting Notes, Scheduled Weekly Meeting @ When2Meet, Contacted Absent Members, Distributed Work, Worked on Use Cases + Class Diagram | Submit Milestone 2, Standby for Milestone 3 |
+|  csaraf2       | Added Repository Restrictions to Main Branch, Contributed to Transition Flow Diagram | Standby for Milestone 3   |
+|  preetia3      | Updated fully dressed use cases and reviewed other requirements for Milestone 2. Completed peer review for Milestone 2. | Standby for Milestone 3   |
+|  qiyangc2      | Completed the UML class diagram and got it reviewed by the team. | Standby for Milestone 3   |
+|  sk120         | Completed the Component Transition Graph and got it reviewed by the team. | Standby for Milestone 3   |
+|  ug4           | Completed creating the informal requirements document and got it reviewed by the team. | Standby for Milestone 3   |
+|  ys58          | Completed creating the informal requirements document and got it reviewed by the team. | Standby for Milestone 3   |
+|  zeweil2       | Discussed and checked the UML class diagram with Qiyang; reviewed the fully dressed use cases and found typos. | Standby for Milestone 3   |
 </br>
 
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: hyosup2, csaraf2, preetia3, sk120, ug4, ys58, zeweil2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1Mei9OACKyPbu_ECrl1QB77g8M1UZoVapJa_JDYiWY-U/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       | Uploaded Meeting Notes, Scheduled Git Meeting, Assigned Teams, Milestone 3 Timeline Established, Milestone Task 3 | Milestone Task 3, Milestone Video, Peer Review |
+|  csaraf2       | Conducted the session for git, Decided on further steps to help the team with android app dev. | Complete Milestone-3, Complete Peer review. |
+|  preetia3      | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Attended Git information session conducted by Chinmay to become familiar with using it for our project. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
+|  qiyangc2      | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Watch Git information notes and recording conducted by Chinmay to become familiar with using it for our project. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
+|  sk120         | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Attended Git info session conducted by Chinmay and set up the development environment. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
+|  ug4           | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Watched Git info session recording conducted by Chinmay and took notes. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
+|  ys58          | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Attended Git info session conducted by Chinmay and set up the development environment. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
+|  zeweil2       | Reviewed instructions for Milestone 3, and discussed approach for splitting up tasks with the team. Watched Git info session recording conducted by Chinmay and took notes. | Work on Milestone 3 deliverables with team. Complete peer review for Milestone 3. |
 </br>
 
 
@@ -106,18 +106,18 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 Members present: List the NetID of the people who attended the meeting
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes:[Meeting Notes](https://docs.google.com/document/d/1xuyjt9li-Ta0yswCLgxKrXeeHkhX4R4s5ybDH1T496s/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 | Standby for Milestone 4 |
+|  csaraf2       |                                 | Standby for Milestone 4 |
+|  preetia3      |                                 | Standby for Milestone 4 |
+|  qiyangc2      |                                 | Standby for Milestone 4 |
+|  sk120         |                                 | Standby for Milestone 4 |
+|  ug4           |                                 | Standby for Milestone 4 |
+|  ys58          |                                 | Standby for Milestone 4 |
+|  zeweil2       |                                 | Standby for Milestone 4 |
 </br>
 
 
@@ -129,14 +129,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -148,14 +148,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -167,14 +167,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -186,14 +186,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -205,14 +205,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -224,14 +224,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
 
 
@@ -243,12 +243,12 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+|  hyosup2       |                                 |                       |
+|  csaraf2       |                                 |                       |
+|  preetia3      |                                 |                       |
+|  qiyangc2      |                                 |                       |
+|  sk120         |                                 |                       |
+|  ug4           |                                 |                       |
+|  ys58          |                                 |                       |
+|  zeweil2       |                                 |                       |
 </br>
