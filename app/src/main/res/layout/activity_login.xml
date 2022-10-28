@@ -57,6 +57,49 @@
             android:layout_height="wrap_content"   
             android:inputType="text"/>
 
+        <!--text view for displaying the selected theme-->
+        <TextView
+            android:id="@+id/idtvTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Select UI Mode"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <!--radio group for switching theme-->
+        <RadioGroup
+            android:id="@+id/idRGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <!--radio button for light theme-->
+            <RadioButton
+                android:id="@+id/idRBLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="2dp"
+                android:padding="2dp"
+                android:text="Light" />
+
+            <!--radio button for dark theme-->
+            <RadioButton
+                android:id="@+id/idRBDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="Dark" />
+
+        </RadioGroup>
+
         <!-- buttonLogin -->
         <Button
             android:id="@+id/buttonLogin"
