@@ -1,66 +1,85 @@
 package edu.uiuc.cs427app;
 
-import android.content.Intent;
+import static java.util.Objects.nonNull;
+
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.navigation.ui.AppBarConfiguration;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import edu.uiuc.cs427app.databinding.ActivityMainBinding;
+import java.util.ArrayList;
 
-import android.widget.Button;
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private ListView listView;
+    private ArrayList<String> citiesFromDB = new ArrayList<String>();
+    private CityAdapter cityAdapter;
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Initializing the UI components
-        // The list of locations should be customized per user (change the implementation so that
-        // buttons are added to layout programmatically
-        Button buttonChampaign = findViewById(R.id.buttonChampaign);
-        Button buttonChicago = findViewById(R.id.buttonChicago);
-        Button buttonLA = findViewById(R.id.buttonLA);
-        Button buttonNew = findViewById(R.id.buttonAddLocation);
-
-        buttonChampaign.setOnClickListener(this);
-        buttonChicago.setOnClickListener(this);
-        buttonLA.setOnClickListener(this);
-        buttonNew.setOnClickListener(this);
-
+        showCities();
     }
 
     @Override
-    public void onClick(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            case R.id.buttonChampaign:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Champaign");
-                startActivity(intent);
-                break;
-            case R.id.buttonChicago:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Chicago");
-                startActivity(intent);
-                break;
-            case R.id.buttonLA:
-                intent = new Intent(this, DetailsActivity.class);
-                intent.putExtra("city", "Los Angeles");
-                startActivity(intent);
-                break;
-            case R.id.buttonAddLocation:
-                // Implement this action to add a new location to the list of locations
-                break;
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }
+
+    //function to add a city name -- gets called when add city button is called
+    public void onClickAddDetails(View view) {
+        String name = ((EditText) findViewById(R.id.textName)).getText().toString();
+        if(name.length() == 0){
+            Toast.makeText(getBaseContext(), "Please enter a city name!", Toast.LENGTH_LONG).show();
+            return;
         }
+        if(nonNull(citiesFromDB) && citiesFromDB.contains(name)){
+            Toast.makeText(getBaseContext(), name+" already added!", Toast.LENGTH_LONG).show();
+        }
+        else {
+            ContentValues values = new ContentValues();
+            // fetching text from user
+            values.put(CityContentProvider.cityName, name);
+            values.put(CityContentProvider.userName, "user1");
+            // inserting into database through content URI
+            getContentResolver().insert(CityContentProvider.CONTENT_URI, values);
+            // displaying a toast message
+            Toast.makeText(getBaseContext(), name+" inserted!", Toast.LENGTH_LONG).show();
+        }
+        //calling the showcities list function to show the list every time the user adds a city so that it looks dynamic
+        showCities();
+    }
+    
+    //this function shows the list of cities that the user has added till now.
+    public void showCities() {
+        listView = (ListView) findViewById(R.id.listCity);
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.city.provider/cities"),  null, CityContentProvider.userName+"=?", new String[]{"user1"}, null);
+        citiesFromDB = new ArrayList<String>();
+        if(cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                citiesFromDB.add(cursor.getString(Math.max(cursor.getColumnIndex(CityContentProvider.cityName), 0)));
+                cursor.moveToNext();
+            }
+        }
+        cityAdapter = new CityAdapter(MainActivity.this, citiesFromDB);
+        listView.setAdapter(cityAdapter);
+        cityAdapter.notifyDataSetChanged();
     }
 }
 
