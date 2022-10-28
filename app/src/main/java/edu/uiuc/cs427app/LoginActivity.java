@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,8 +17,10 @@ import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
 import android.content.SharedPreferences;
-import android.widget.RelativeLayout;
 import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
+import android.accounts.AccountManager;
+import 	android.accounts.Account;
 import android.widget.EditText;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -46,11 +49,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText username;
     private EditText password;
     private Hashtable<String, String> accountDictionary;
-    private  SharedPreferences preferences;
+    private SharedPreferences preferences;
     private EditText etUserName;
     private EditText etPassWord;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,37 +67,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonLogin.setOnClickListener(this);
         buttonSignUp.setOnClickListener(this);
 
-        //Get the preference setting object: the first parameter is the table name, the second parameter is the permission
-        preferences=this.getSharedPreferences("SignUP",MODE_PRIVATE);
-        //Get the user name and password data stored in the preferences
-        String usrName = preferences.getString("name", "");
-        String usrPass = preferences.getString("pass", "");
-
-        //Put the data we stored in the two input boxes
-        etUserName.setText(usrName);
-        etPassWord.setText(usrPass);
-
-        //Set the click event of the signup button: save the entered data into the preferences
-        buttonSignUp.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                //Save the data to the preferences
-                //1. Get an edited object of preferences
-                Editor ed=preferences.edit();
-                //2. Editor.putString; put string
-                //2.1. Get the content of the input box
-                String username = etUserName.getText().toString().trim();
-                String password = etPassWord.getText().toString().trim();
-                //2.2. Put our data
-                ed.putString("name",username);
-                ed.putString("pass",password);
-                //3. Submit
-                ed.commit();
-                Toast.makeText(getApplicationContext(),"Save successfully",Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
     }
 
@@ -104,26 +74,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         Intent intent;
 
-        // get the username and password on click
-        // log for debugging
-        String username_str = username.getText().toString();
-        Log.e("LISTEN", "username:" + username_str);
-        String password_str = password.getText().toString();
-        Log.e("LISTEN", "password:" + password_str);
-        String Username = username_str;
-        String Password = password_str;
 
         switch (view.getId()) {
             case R.id.buttonSignUp:
 
                 // update the storage for username and password
-                // TODO
-
                 // lead to the main page
+                //1. Get an edited object of preferences
+                SharedPreferences sharedPreferences = getSharedPreferences("SignUP",MODE_PRIVATE);
+                Editor ed = sharedPreferences.edit();
+                //2. Editor.putString; put string
+                //2.1. Get the content of the input box
+                String username = etUserName.getText().toString().trim();
+                String password = etPassWord.getText().toString().trim();
+                //2.2. Put our data
+                ed.putString(username,password);
+//                ed.putString("name",username);
+//                ed.putString("pass",password);
+                //3. Submit
+                ed.commit();
+                Toast.makeText(getApplicationContext(),"Save successfully",Toast.LENGTH_SHORT).show();
+//                String test = sharedPreferences.getString(username,null);
 
+
+//                Toast.makeText(getApplicationContext(),"Password is :"+test,Toast.LENGTH_SHORT).show();
                 intent = new Intent(this, MainActivity.class);
                 // send the details of username to personalize the main page
-                intent.putExtra("username", username_str);
+                intent.putExtra("username", username);
 
                 startActivity(intent);
 
@@ -133,14 +110,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
              case R.id.buttonLogin:
 
                  // check the correctness of username and password
-                 // TODO
-                 intent = new Intent(this, MainActivity.class);
+
+//                 intent = new Intent(this, MainActivity.class);
 
                  // send the details of username to personalize the main page
-                 intent.putExtra("username", username_str);
 
-                 startActivity(intent);
 
+                 String typedUserName = etUserName.getText().toString().trim();
+                 String typedPassword = etPassWord.getText().toString().trim();
+//                 intent.putExtra("username", typedUserName);
+
+                 SharedPreferences retrieving = getSharedPreferences("SignUP",MODE_PRIVATE);
+                 String retrievedPassword = retrieving.getString((typedUserName),null);
+
+//                 Toast.makeText(getApplicationContext(),typedUserName,Toast.LENGTH_SHORT).show();
+//                 Toast.makeText(getApplicationContext(),"Password is:"+retrievedPassword,Toast.LENGTH_SHORT).show();
+
+                 if (retrieving.contains(typedUserName)){
+                     String storedPassword = retrieving.getString(typedUserName,null);
+                     if(storedPassword.equals(typedPassword)){
+                         intent = new Intent(this, MainActivity.class);
+                         intent.putExtra("username", typedUserName);
+                         startActivity(intent);
+                     }else{
+                         Toast.makeText(getApplicationContext(),"Password incorrect",Toast.LENGTH_SHORT).show();
+                     }
+
+                 }else{
+                     Toast.makeText(getApplicationContext(),"Sign up first",Toast.LENGTH_SHORT).show();
+                 }
                  break;
         }
     }
