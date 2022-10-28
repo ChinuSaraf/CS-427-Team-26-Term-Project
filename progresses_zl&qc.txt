@@ -8,7 +8,9 @@ store in hashmap (key = id/username, value = list of cities)
 Seperate Task:
 - (done by ZL) signup/login page creation (same logic for signup and login) 
 - (done by ZL) page connection (button onclick, login to main)
-- (TODO) accountmanager and storage?
+- (done by qiyang) accountmanager and storage?
+- (done by qiyang) signup/login function developed
+- (done by qiyang) account info storage -> used Sharedpreferences save them in locol
 - (TODO) MainActivity update (provide unique city list)
 - (done by ZL) MainActivity update (provide username)
 - (done by ZL) sign out
