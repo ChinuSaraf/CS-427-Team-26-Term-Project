@@ -15,17 +15,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    String theme="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         // initializing all our variables.
         RadioGroup radioGroup = findViewById(R.id.idRGroup);
-
-        // Default radio box check
-        int mode = AppCompatDelegate.getDefaultNightMode();
-        radioGroup.check(mode==1 ? R.id.idRBLight : R.id.idRBDark);
 
         Button buttonLogin = findViewById(R.id.buttonLogin);
         Button buttonSignUp = findViewById(R.id.buttonSignUp);
@@ -39,16 +35,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.idRBLight:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        theme="1";
                         break;
                     case R.id.idRBDark:
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        theme="2";
                         break;
                 }
             }
         });
     }
-
     @Override
     public void onClick(View view) {
         Intent intent;
@@ -66,28 +61,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 SharedPreferences sharedPreferences = getSharedPreferences("SignUP",MODE_PRIVATE);
                 Editor ed = sharedPreferences.edit();
                 ed.putString(typedUserName,typedPassword);
+                if(theme.equals(""))
+                {
+                    theme="1";
+                }
+                ed.putString(typedUserName+"_theme",theme);
                 ed.commit();
                 Toast.makeText(getApplicationContext(),"Save successfully",Toast.LENGTH_SHORT).show();
                 intent = new Intent(this, MainActivity.class);
                 // send the details of username to personalize the main page
                 intent.putExtra("username", typedUserName);
+                intent.putExtra("theme", theme);
                 startActivity(intent);
                 break;
 
             case R.id.buttonLogin:
                 SharedPreferences retrieving = getSharedPreferences("SignUP",MODE_PRIVATE);
+                SharedPreferences sharedPreferencesLogin = getSharedPreferences("SignUP",MODE_PRIVATE);
+                Editor edLogin = sharedPreferencesLogin.edit();
+                if(theme.equals(""))
+                {
+                    theme=retrieving.getString(typedUserName+"_theme", null);
+                }
+                edLogin.putString(typedUserName+"_theme",theme);
+                edLogin.commit();
                 if (retrieving.contains(typedUserName)){
                     String storedPassword = retrieving.getString(typedUserName,null);
                     if(storedPassword.equals(typedPassword)){
+                        String storedTheme = retrieving.getString(typedUserName+"_theme",null);
                         intent = new Intent(this, MainActivity.class);
                         intent.putExtra("username", typedUserName);
+                        intent.putExtra("theme", storedTheme);
                         startActivity(intent);
                     }else{
                         Toast.makeText(getApplicationContext(),"Password incorrect",Toast.LENGTH_SHORT).show();
                     }
 
-                }else{
-                    Toast.makeText(getApplicationContext(),"Sign up first",Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(), "Sign up first", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
