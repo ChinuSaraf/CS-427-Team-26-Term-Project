@@ -18,12 +18,14 @@ public class CityAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<String> cities;
 
+    //creating public method for list of cities
     public CityAdapter(Context context, ArrayList cities) {
         super();
         this.context = context;
         this.cities = cities;
     }
 
+    //function to return the count of cities
     public int getCount() {
         // return the number of records
         return nonNull(cities) ? cities.size() : 0;
@@ -50,7 +52,8 @@ public class CityAdapter extends BaseAdapter {
             @Override
             //this function is called when the user click the delete city button
             public void onClick(View view) {
-                int count = context.getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), CityContentProvider.cityName+"=? and " + CityContentProvider.userName+"=?", new String[]{cityName, "user1"});
+                String userName = ((MainActivity)context).getIntent().getStringExtra("username");
+                int count = context.getContentResolver().delete(Uri.parse("content://com.demo.city.provider/cities"), CityContentProvider.cityName+"=? and " + CityContentProvider.userName+"=?", new String[]{cityName, userName});
                 if(count != 0) {
                     if(context instanceof MainActivity) {
                         ((MainActivity)context).showCities();

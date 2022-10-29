@@ -20,6 +20,14 @@
         app:layout_constraintVertical_bias="0.13"
         tools:ignore="MissingConstraints">
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/logoutButton"
+            android:onClick="onClickLogout"/>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -49,15 +57,11 @@
                 android:background="#4CAF50"
                 android:fontFamily="sans-serif"
                 android:onClick="onClickAddDetails"
-                android:text="Add City"
+                android:text="@string/addCity"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#FFFFFF"
                 android:textStyle="bold" />
         </RelativeLayout>
-
-
-
         <ListView
             android:id="@+id/listCity"
             android:divider="#0000CC"
