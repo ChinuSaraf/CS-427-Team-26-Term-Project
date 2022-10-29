@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickLogout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        finish();
     }
 
     //this function shows the list of cities that the user has added till now.

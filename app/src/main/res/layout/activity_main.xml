@@ -60,7 +60,6 @@
                 android:text="@string/addCity"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#FFFFFF"
                 android:textStyle="bold" />
         </RelativeLayout>
         <ListView
