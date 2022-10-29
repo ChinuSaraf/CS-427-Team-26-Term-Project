@@ -16,10 +16,13 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     String theme="";
+
+    // function to create views and bind data to lists
+    // Bundle is used to save & recover state information for the activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login); // to define the layout for the activity's user interface
         // initializing all our variables.
         RadioGroup radioGroup = findViewById(R.id.idRGroup);
 
@@ -44,6 +47,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
+    // function to be invoked in the activity when the button is clicked
     @Override
     public void onClick(View view) {
         Intent intent;

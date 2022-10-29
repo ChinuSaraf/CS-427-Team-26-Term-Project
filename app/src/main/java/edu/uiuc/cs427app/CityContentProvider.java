@@ -65,6 +65,8 @@ public class CityContentProvider extends ContentProvider {
         }
         return false;
     }
+
+    // Query the given URI, returning a Cursor over the result set
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
@@ -98,6 +100,7 @@ public class CityContentProvider extends ContentProvider {
         throw new SQLiteException("Failed to add a record into " + uri);
     }
 
+    // updates the table
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
@@ -113,6 +116,7 @@ public class CityContentProvider extends ContentProvider {
         return count;
     }
 
+    // deletes the data from the table
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         int count = 0;

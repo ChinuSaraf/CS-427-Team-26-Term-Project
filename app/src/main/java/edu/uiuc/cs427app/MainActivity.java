@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> citiesFromDB = new ArrayList<String>();
     private CityAdapter cityAdapter;
 
+    // function to create views and bind data to lists
+    // Bundle is used to save & recover state information for the activity
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         showCities();
     }
 
+    // used by derived classes of the View to get touch events
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         showCities();
     }
 
+    // function to logout
     public void onClickLogout(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

@@ -18,12 +18,14 @@ public class CityAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<String> cities;
 
+    //creating public method for list of cities
     public CityAdapter(Context context, ArrayList cities) {
         super();
         this.context = context;
         this.cities = cities;
     }
 
+    //function to return the count of cities
     public int getCount() {
         // return the number of records
         return nonNull(cities) ? cities.size() : 0;
