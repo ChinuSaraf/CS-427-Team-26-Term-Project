@@ -104,20 +104,20 @@ Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1Mei9OACKyPbu_
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58, zeweil2 (late)
 </br>
-Meeting notes:[Meeting Notes](https://docs.google.com/document/d/1xuyjt9li-Ta0yswCLgxKrXeeHkhX4R4s5ybDH1T496s/edit?usp=sharing)
+Meeting notes: [Meeting Notes](https://docs.google.com/document/d/1xuyjt9li-Ta0yswCLgxKrXeeHkhX4R4s5ybDH1T496s/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       |                                 | Standby for Milestone 4 |
-|  csaraf2       |                                 | Standby for Milestone 4 |
-|  preetia3      |                                 | Standby for Milestone 4 |
-|  qiyangc2      |                                 | Standby for Milestone 4 |
-|  sk120         |                                 | Standby for Milestone 4 |
-|  ug4           |                                 | Standby for Milestone 4 |
-|  ys58          |                                 | Standby for Milestone 4 |
-|  zeweil2       |                                 | Standby for Milestone 4 |
+|  hyosup2       | Worked on Task 3, Helped w/ Task 1 Debug, Recorded Video, Peer Review | Standby for Milestone 4 |
+|  csaraf2       | Worked on Task 2, Led Meetings on Task 2 for Team Members, Helped w/ Task 1 Debug, Integrated Task 2 with Task 3, Peer Review | Standby for Milestone 4 |
+|  preetia3      | Worked on Task 3, Helped w/ Task 1 Debug, Peer Review | Standby for Milestone 4 |
+|  qiyangc2      | Worked on Task 1- Created Login Activity for App & Worked on Sign Out Behaviour, Peer Review | Standby for Milestone 4 |
+|  sk120         | Worked on Task 2, Helped w/ Task 1 Debug, Worked on Storing Username + Password + UI Preference Saving, Handled Edge Cases, Peer Review | Standby for Milestone 4 |
+|  ug4           | Worked on Task 2, Helped w/ Task 1 Debug, Updated Documentation + Styling for Task 2, Peer Review | Standby for Milestone 4 |
+|  ys58          | Worked on Task 2, Helped w/ Task 1 Debug, Worked on Storing Username + Password + UI Preference Saving, Peer Review                                  | Standby for Milestone 4 |
+|  zeweil2       | Worked on Task 1- Created Login Activity for App & Worked on Sign Out Behaviour, Peer Review | Standby for Milestone 4 |
 </br>
 
 
