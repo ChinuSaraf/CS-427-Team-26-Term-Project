@@ -21,11 +21,31 @@
         android:textSize="20dp" />
 
     <Button
+        android:id="@+id/weatherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="180dp"
+        android:layout_alignParentRight="true"
+
+        android:text="Weather" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="95dp"
+        android:layout_alignParentRight="true"
+
+        android:text="Map" />
+
+    <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="1dp"
         android:layout_alignParentRight="true"
 
         android:text="Delete" />
