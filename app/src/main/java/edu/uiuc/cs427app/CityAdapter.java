@@ -3,6 +3,7 @@ package edu.uiuc.cs427app;
 import static java.util.Objects.nonNull;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,8 @@ public class CityAdapter extends BaseAdapter {
         // get the reference of textView and button
         TextView txtSchoolTitle = (TextView) view.findViewById(R.id.cityName);
         Button btnAction = (Button) view.findViewById(R.id.deleteButton);
+        Button weatherButton = (Button) view.findViewById(R.id.weatherButton);
+        Button mapButton = (Button) view.findViewById(R.id.mapButton);
 
         // Set the title and button name
         String cityName = cities.get(position);
@@ -60,6 +63,28 @@ public class CityAdapter extends BaseAdapter {
                         Toast.makeText(context, cityName + " deleted!", Toast.LENGTH_LONG).show();
                     }
                 }
+            }
+        });
+
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(view.getContext(), WeatherActivity.class);
+                // send the details of username to personalize the main page
+                intent.putExtra("cityName", cityName);
+                context.startActivity(intent);
+            }
+        });
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(view.getContext(), MapActivity.class);
+                // send the details of username to personalize the main page
+                intent.putExtra("cityName", cityName);
+                context.startActivity(intent);
             }
         });
 

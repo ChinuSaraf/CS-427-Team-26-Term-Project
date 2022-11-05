@@ -32,7 +32,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         Button buttonMap = findViewById(R.id.mapButton);
         buttonMap.setOnClickListener(this);
-
     }
 
     @Override
