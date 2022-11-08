@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="232dp"
+        android:layout_y="132dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="232dp"
+        android:layout_y="132dp"
+        android:layout_below="@+id/city_name"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="232dp"
+        android:layout_y="132dp"
+        android:layout_below="@+id/latitude"
+        android:layout_centerHorizontal="true"/>
+
+    <WebView
+        android:id="@+id/city_map"
+        android:layout_width="380dp"
+        android:layout_height="600dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_below="@+id/longitude"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+    </WebView>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

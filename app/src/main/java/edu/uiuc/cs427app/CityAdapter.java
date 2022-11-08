@@ -70,9 +70,11 @@ public class CityAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent;
+                String userName = ((MainActivity)context).getIntent().getStringExtra("username");
                 intent = new Intent(view.getContext(), WeatherActivity.class);
                 // send the details of username to personalize the main page
                 intent.putExtra("cityName", cityName);
+                intent.putExtra("username", userName);
                 context.startActivity(intent);
             }
         });
@@ -81,9 +83,11 @@ public class CityAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent;
+                String userName = ((MainActivity)context).getIntent().getStringExtra("username");
                 intent = new Intent(view.getContext(), MapActivity.class);
                 // send the details of username to personalize the main page
                 intent.putExtra("cityName", cityName);
+                intent.putExtra("username", userName);
                 context.startActivity(intent);
             }
         });
