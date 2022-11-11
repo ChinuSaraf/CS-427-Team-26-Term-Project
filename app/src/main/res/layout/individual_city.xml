@@ -12,7 +12,7 @@
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="-3dp"
         android:layout_marginEnd="48dp"
         android:layout_marginTop="12dp"
         android:paddingLeft="2dp"
@@ -22,10 +22,10 @@
 
     <Button
         android:id="@+id/weatherButton"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginEnd="158dp"
         android:layout_alignParentRight="true"
         android:textSize="11sp"
 
@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_width="wrap_content"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="91dp"
@@ -51,7 +51,6 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="8dp"
         android:backgroundTint="@color/design_default_color_error"
-
         android:text="Delete"
         android:textSize="12sp" />
 

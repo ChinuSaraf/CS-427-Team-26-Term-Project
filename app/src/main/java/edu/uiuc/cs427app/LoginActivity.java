@@ -81,15 +81,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.buttonLogin:
+                // retrieve the details of the logged in user
                 SharedPreferences retrieving = getSharedPreferences("SignUP",MODE_PRIVATE);
                 SharedPreferences sharedPreferencesLogin = getSharedPreferences("SignUP",MODE_PRIVATE);
                 Editor edLogin = sharedPreferencesLogin.edit();
+                // retrieve the theme preference of the logged in user,
+                // and if the theme is not set, set it to the selected theme
                 if(theme.equals(""))
                 {
                     theme=retrieving.getString(typedUserName+"_theme", null);
                 }
                 edLogin.putString(typedUserName+"_theme",theme);
                 edLogin.commit();
+                // get the password for the logged in user and check
+                // if the typed password is the same as the stored password
                 if (retrieving.contains(typedUserName)){
                     String storedPassword = retrieving.getString(typedUserName,null);
                     if(storedPassword.equals(typedPassword)){

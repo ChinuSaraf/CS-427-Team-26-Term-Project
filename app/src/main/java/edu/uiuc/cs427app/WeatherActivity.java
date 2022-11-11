@@ -36,6 +36,9 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        String cityName = getIntent().getStringExtra("cityName");
+        String username = getIntent().getStringExtra("username");
+        this.setTitle("Team #26 - "+username);
         Toast.makeText(getBaseContext(), cityName, Toast.LENGTH_LONG).show();
         tv_get_cityName = findViewById(R.id.tv_get_cityName);
         tv_date_and_time = findViewById(R.id.tv_date_and_time);
