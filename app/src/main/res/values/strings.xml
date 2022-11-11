@@ -4,7 +4,7 @@
     <string name="heading">Team#26</string>
     <string name="insertButtontext">Add City</string>
     <string name="loadButtonText">Load Cities</string>
-    <string name="deleteButtonText">Delete City</string>
+    <string name="deleteButtonText">Delete</string>
     <string name="logoutButton">Logout</string>
     <string name="addCity">Add City</string>
 
