@@ -35,6 +35,7 @@ public class MapActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    // extract the lat and lng properties of the response JSON
                     JSONObject result = new JSONObject(String.valueOf(response.getJSONArray("results").get(0)));
                     JSONObject location = new JSONObject(String.valueOf(new JSONObject(String.valueOf(result.get("geometry"))).get("location")));
                     Double latitude = (Double) location.get("lat");

@@ -48,7 +48,6 @@ public class CityAdapter extends BaseAdapter {
         // Set the title and button name
         String cityName = cities.get(position);
         txtSchoolTitle.setText(cityName);
-        btnAction.setText("Delete City");
 
         // Click listener of button
         btnAction.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +64,10 @@ public class CityAdapter extends BaseAdapter {
                 }
             }
         });
-
+        // Click listener of button
         weatherButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            //this function is called when the user click the weather button
             public void onClick(View view) {
                 Intent intent;
                 String userName = ((MainActivity)context).getIntent().getStringExtra("username");
@@ -78,9 +78,10 @@ public class CityAdapter extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
-
+        // Click listener of button
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
+            //this function is called when the user click the map button
             public void onClick(View view) {
                 Intent intent;
                 String userName = ((MainActivity)context).getIntent().getStringExtra("username");
