@@ -6,4 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        tools:ignore="ExtraText,MissingConstraints">
+
+        <!--cityName-->
+        <TextView
+            android:id="@+id/tv_get_cityName"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textSize="30dp"
+            android:paddingLeft="2dp"
+            android:gravity="center_vertical|left"
+            android:textColor="@android:color/black"
+            android:text="cityName not available at this time" />
+
+
+        <TextView
+            android:id="@+id/tv_date_and_time"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="date not available at this time"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="temperature not available at this time"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_weather_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="weather type not available at this time"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="humidity not available at this time"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_wind_condition"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="wind_condition not available at this time"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
