@@ -41,8 +41,8 @@ public class MapActivity extends AppCompatActivity {
                     Double latitude = (Double) location.get("lat");
                     Double longitude = (Double) location.get("lng");
                     String formattedCityName = String.valueOf(result.get("formatted_address"));
-                    lat.setText(" Latitude: " + latitude);
-                    lng.setText(" Longitude: " + longitude);
+                    lat.setText("Latitude: " + latitude);
+                    lng.setText("Longitude: " + longitude);
                     city.setText("City Name: "+ formattedCityName);
                 } catch (JSONException e) {
                     e.printStackTrace();
