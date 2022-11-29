@@ -33,8 +33,9 @@ import org.junit.runners.MethodSorters;
 @LargeTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING) //to run the tests in ascending order
 public class UserSignUpLoginTest extends TestCase{
+
     @Test
-    // test to check the sign up function
+    // test to check the sign up function w/ username and password, this will create an account with these credentials
 
     public void userSignUpTest() {
         Intent intent = new Intent(ApplicationProvider.getApplicationContext(), LoginActivity.class);
@@ -47,6 +48,8 @@ public class UserSignUpLoginTest extends TestCase{
             Espresso.closeSoftKeyboard();
             onView(withId(R.id.buttonSignUp)).perform(click());
             Thread.sleep(1000); //wait time of 1 sec
+
+            // checks to see that we have entered the customised details page of the user + successfully accessed the account
             onView(withId(R.id.logoutButton)).perform(click());
             Thread.sleep(1000); //wait time of 1 sec
         } catch (InterruptedException e) {
@@ -55,16 +58,17 @@ public class UserSignUpLoginTest extends TestCase{
     }
 
     @Test
-    // test to check the login function
+    // test to check the login function w/ the CORRECT username + password
+    // this proves that SharedPreferences (our "database") has stored username "abc" and password "123"
 
-    public void userLoginTest1() {
+    public void userLoginTest() {
         Intent intent = new Intent(ApplicationProvider.getApplicationContext(), LoginActivity.class);
 
         try (final ActivityScenario<LoginActivity> scenario = ActivityScenario.launch(intent)) {
             // this test is only for username and password matched with stored info in app
-            onView(withId(R.id.username)).perform(typeText("abc"));
+            onView(withId(R.id.username)).perform(typeText("abc")); // correct username
             Espresso.closeSoftKeyboard();
-            onView(withId(R.id.password)).perform(typeText("123"));
+            onView(withId(R.id.password)).perform(typeText("123")); // correct password
             Espresso.closeSoftKeyboard();
             onView(withId(R.id.buttonLogin)).perform(click());
             Thread.sleep(1000); //wait time of 1 sec
@@ -76,23 +80,49 @@ public class UserSignUpLoginTest extends TestCase{
     }
 
     @Test
-    // test to check the login function
+    // test to check the login function w/ the WRONG password
+    // this proves that SharedPreferences (our "database") has stored username "abc" and password "123"
 
-    public void userLoginTest2() {
+    public void userLoginWrongPassword() {
         Intent intent = new Intent(ApplicationProvider.getApplicationContext(), LoginActivity.class);
 
         try (final ActivityScenario<LoginActivity> scenario = ActivityScenario.launch(intent)) {
             // this test is only for username and password matched with stored info in app
-            onView(withId(R.id.username)).perform(typeText("abc"));
+            onView(withId(R.id.username)).perform(typeText("abc")); // correct username
             Espresso.closeSoftKeyboard();
-            onView(withId(R.id.password)).perform(typeText("12"));
+            // Using the WRONG password
+            onView(withId(R.id.password)).perform(typeText("12")); // WRONG password
+            Espresso.closeSoftKeyboard();
+
+            // simulating login activity again to prove that the login function does NOT work with the wrong password
+            // proves that information stored @ SharedPreferences has been compared with the inputted test information
+            onView(withId(R.id.buttonLogin)).perform(click());
+            Thread.sleep(1000); //wait time of 1 sec
+            onView(withId(R.id.buttonLogin)).perform(click());
+            Thread.sleep(1000); //wait time of 1 sec
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    // test to check the login function w/ the WRONG username
+    // this proves that SharedPreferences (our "database") has stored username "abc" and password "123"
+
+    public void userLoginWrongUsername() {
+        Intent intent = new Intent(ApplicationProvider.getApplicationContext(), LoginActivity.class);
+
+        try (final ActivityScenario<LoginActivity> scenario = ActivityScenario.launch(intent)) {
+            // this test is only for username and password matched with stored info in app
+            onView(withId(R.id.username)).perform(typeText("a")); // WRONG username
+            Espresso.closeSoftKeyboard();
+            onView(withId(R.id.password)).perform(typeText("123")); // correct password
             Espresso.closeSoftKeyboard();
             onView(withId(R.id.buttonLogin)).perform(click());
             Thread.sleep(1000); //wait time of 1 sec
 
-            // TODO: how to check we are still in the login page?
-            // one possible way is to check the login button below
-            onView(withId(R.id.buttonLogin)).perform(click());
+            // confirms that the app does not go into the 2nd page, stays at authentication page
+            onView(withId(R.id.textView1)).check(ViewAssertions.matches(ViewMatchers.withText("UserName")));
             Thread.sleep(1000); //wait time of 1 sec
         } catch (InterruptedException e) {
             e.printStackTrace();
