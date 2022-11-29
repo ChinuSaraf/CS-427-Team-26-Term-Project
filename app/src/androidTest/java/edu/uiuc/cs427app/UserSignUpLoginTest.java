@@ -76,8 +76,24 @@ public class UserSignUpLoginTest extends TestCase{
     // test to check the signup function
 
     public void userSignUpTest() {
+        Intent intent = new Intent(ApplicationProvider.getApplicationContext(), LoginActivity.class);
+        intent.putExtra("username", "admin");
+        intent.putExtra("password", "123456");
+        intent.putExtra("theme", "1");
 
-
+        try (final ActivityScenario<LoginActivity> scenario = ActivityScenario.launch(intent)) {
+            // this test is only for username and password matched with stored info in app
+//            Thread.sleep(1000); //wait time of 3 sec
+            onView(withId(R.id.username)).perform(typeText("abc"));
+            Espresso.closeSoftKeyboard();
+            onView(withId(R.id.password)).perform(typeText("123"), closeSoftKeyboard());
+            onView(withId(R.id.buttonSignUp)).perform(click());
+            Thread.sleep(2000); //wait time of 2 sec
+            onView(withId(R.id.logoutButton)).perform(ViewActions.click());
+            Thread.sleep(2000); //wait time of 2 sec
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
