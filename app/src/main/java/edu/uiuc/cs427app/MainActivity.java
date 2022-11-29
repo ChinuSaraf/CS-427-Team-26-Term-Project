@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String username = getIntent().getStringExtra("username");
         String theme = getIntent().getStringExtra("theme");
+
         if(nonNull(theme) && theme.equals("1"))
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
