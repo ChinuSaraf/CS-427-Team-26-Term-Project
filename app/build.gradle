@@ -1,6 +1,20 @@
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0'
+        //Jacoco Plugin
+        classpath "org.jacoco:org.jacoco.core:0.8.7"
+    }
+}
+
 plugins {
     id 'com.android.application'
 }
+
+apply plugin: 'com.android.application'
+apply from: '../jacoco.gradle'
 
 android {
     compileSdk 32
@@ -19,6 +33,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            testCoverageEnabled true
         }
     }
     compileOptions {
@@ -44,4 +61,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test:rules:1.4.0'
+
 }
