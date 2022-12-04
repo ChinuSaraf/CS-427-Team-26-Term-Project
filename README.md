@@ -161,58 +161,58 @@ Meeting Notes: [Document](https://docs.google.com/document/d/1do1SKRVQbhpd--4WHa
 
 <b>Week 8</b>
 </br>
-Members Present: List the NetID of the people who attended the meeting
+Members Present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58
 </br>
-Meeting Notes: Explain the overall team progress and a summary of discussion
+Meeting Notes: [Document](https://docs.google.com/document/d/1qu65o1nPCX00NqSDQCDurhkHjsy1WnQPxk4HSupyntY/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       |                                 |                       |
-|  csaraf2       |                                 |                       |
-|  preetia3      |                                 |                       |
-|  qiyangc2      |                                 |                       |
-|  sk120         |                                 |                       |
-|  ug4           |                                 |                       |
-|  ys58          |                                 |                       |
-|  zeweil2       |                                 |                       |
+|  hyosup2       | Standby for Milestone 5         | Write meeting notes in preparation for Milestone 5, divide work, establish timeline in consideration of Fall Break, ask relevant questions to TA. |
+|  csaraf2       | Standby for Milestone 5         | Started team discussions on Milestone 5, and discussed deliverables at a team meeting to determine how to divide the work into sub-teams. |
+|  preetia3      | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
+|  qiyangc2      | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
+|  sk120         | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
+|  ug4           | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
+|  ys58          | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
+|  zeweil2       | Standby for Milestone 5         | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. |
 </br>
 
 
 <b>Week 9</b>
 </br>
-Members Present: List the NetID of the people who attended the meeting
+Members Present: N/A (Fall Break)
 </br>
-Meeting Notes: Explain the overall team progress and a summary of discussion
+Meeting Notes: N/A
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       |                                 |                       |
-|  csaraf2       |                                 |                       |
-|  preetia3      |                                 |                       |
-|  qiyangc2      |                                 |                       |
-|  sk120         |                                 |                       |
-|  ug4           |                                 |                       |
-|  ys58          |                                 |                       |
-|  zeweil2       |                                 |                       |
+|  hyosup2       | Wrote meeting notes, divided work, established work timeline, asked questions to TA, prepared Espresso background research in preparation of writing instrumented tests for user login/ signup + weather. | Complete user login/ signup + weather tests, standby for team 2's work progress, video, bonus activities. |
+|  csaraf2       | Started research on how to write tests using Espresso. Started research on how to write tests using Espresso. Started work with the team on the map feature test. | Our sub-team decided to focus on adding/deleting cities, Map feature tests, and Logout tests. |
+|  preetia3      | Started team discussions on Milestone 5, discussed deliverables at team meeting to determine how to divide the work into sub-teams. | Our sub-team will focus on user sign up, login, weather feature tests. |
+|  qiyangc2      | Started research on how to write instrumented tests. Started work with team on user sign up & login test. | Our sub-team will focus on user sign up, login, weather feature tests. |
+|  sk120         | Started research on how to write tests using Espresso. Started work with team on adding/deleting cities test. | Our sub-team will focus on adding/deleting cities, Map feature tests.|
+|  ug4           | Started research on how to write tests using Espresso. Started work with team on adding/deleting cities test. | Our sub-team will focus on adding/deleting cities, Map feature tests.|
+|  ys58          | Started work with team on adding/deleting cities test. | Our sub-team will focus on adding/deleting cities, map feature tests. |
+|  zeweil2       | Started research on how to write instrumented tests. Started work with team on user sign up & login test. | Our sub-team will focus on user sign up, login, weather feature tests. |
 </br>
 
 
 <b>Week 10</b>
 </br>
-Members Present: List the NetID of the people who attended the meeting
+Members Present: hyosup2, csaraf2, preetia3, qiyangc2, sk120, ug4, ys58, zeweil2
 </br>
-Meeting Notes: Explain the overall team progress and a summary of discussion
+Meeting Notes: [Document](https://docs.google.com/document/d/1kDD9WewGucgu8M01KjUfLU1g4JF47-x3Gouw_tTWjpg/edit?usp=sharing)
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       |                                 |                       |
-|  csaraf2       |                                 |                       |
-|  preetia3      |                                 |                       |
-|  qiyangc2      |                                 |                       |
-|  sk120         |                                 |                       |
-|  ug4           |                                 |                       |
-|  ys58          |                                 |                       |
-|  zeweil2       |                                 |                       |
+|  hyosup2       | Completed user login/ signup + weather tests, recorded the Milestone 5 video, recorded coverage report video, filled out peer review, cleaned up GitHub repository, updated all weekly reports. | Complete |
+|  csaraf2       | Completed writing the tests for map features and tested the same for Milestone 5 in working sessions with the sub-team. Completed Peer Review for Milestone 5. | Complete |
+|  preetia3      | Completed writing instrumented tests for user sign up, login, weather feature for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
+|  qiyangc2      | Completed writing instrumented tests for user sign up, login, weather feature for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
+|  sk120         | Helped write the tests for adding/deleting cities and tested the same for Milestone 5 in working sessions with sub-team. Completed the coverage report for the application. Completed Peer Review for Milestone 5. | Complete |
+|  ug4           | Helped write the tests for adding/deleting cities and tested the same for Milestone 5 in working sessions with sub-team. Completed the coverage report for the application. Completed Peer Review for Milestone 5. | Complete |
+|  ys58          | Completed writing the tests for adding/deleting cities and tested the same for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
+|  zeweil2       | Completed writing instrumented tests for user sign up, login, weather feature for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
 </br>
 
 
