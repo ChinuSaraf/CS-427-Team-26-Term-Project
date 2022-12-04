@@ -205,7 +205,7 @@ Meeting Notes: [Document](https://docs.google.com/document/d/1kDD9WewGucgu8M01Kj
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|  hyosup2       | Completed user login/ signup + weather tests, recorded Milestone 5 video, recorded coverage report video, filled out peer review, cleaned up GitHub repository, updated all weekly reports. | Complete |
+|  hyosup2       | Completed user login/ signup + weather tests, recorded the Milestone 5 video, recorded coverage report video, filled out peer review, cleaned up GitHub repository, updated all weekly reports. | Complete |
 |  csaraf2       | Completed writing the tests for map features and tested the same for Milestone 5 in working sessions with the sub-team. Completed Peer Review for Milestone 5. | Complete |
 |  preetia3      | Completed writing instrumented tests for user sign up, login, weather feature for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
 |  qiyangc2      | Completed writing instrumented tests for user sign up, login, weather feature for Milestone 5 in working sessions with sub-team. Completed Peer Review for Milestone 5. | Complete |
