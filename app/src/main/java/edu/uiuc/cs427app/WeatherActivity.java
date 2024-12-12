@@ -60,7 +60,7 @@ public class WeatherActivity extends AppCompatActivity {
     public void fetchWeather() {
 
         // API url
-        String apiKey = "ff23032afc5f79d1097236636db71215";
+        String apiKey = "API_KEY";
         String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + apiKey + "&units=imperial";
 
         // define the API call with key and implement the request to UI format
